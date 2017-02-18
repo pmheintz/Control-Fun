@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Control_Fun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pheintz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-QU-PkF">
+                                <rect key="frame" x="101" y="74" width="172" height="80"/>
+                            </imageView>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMS-Gv-4Ms">
+                                <rect key="frame" x="91" y="162" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-Fo-HVk">
+                                <rect key="frame" x="16" y="167" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SqT-WZ-1a0">
+                                <rect key="frame" x="91" y="200" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ9-Ba-S7z">
+                                <rect key="frame" x="16" y="205" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TMS-Gv-4Ms" firstAttribute="leading" secondItem="SqT-WZ-1a0" secondAttribute="leading" id="14c-4T-jsL"/>
+                            <constraint firstItem="JQ9-Ba-S7z" firstAttribute="width" secondItem="fPN-Fo-HVk" secondAttribute="width" id="BwZ-gH-xbF"/>
+                            <constraint firstItem="JQ9-Ba-S7z" firstAttribute="centerY" secondItem="SqT-WZ-1a0" secondAttribute="centerY" id="C5j-aL-duS"/>
+                            <constraint firstItem="P6o-QU-PkF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Itv-j4-k7H"/>
+                            <constraint firstItem="TMS-Gv-4Ms" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="K6b-ZV-Q3e"/>
+                            <constraint firstItem="TMS-Gv-4Ms" firstAttribute="leading" secondItem="fPN-Fo-HVk" secondAttribute="trailing" constant="8" symbolic="YES" id="Wi7-vv-1e3"/>
+                            <constraint firstItem="fPN-Fo-HVk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wrg-lT-jbr"/>
+                            <constraint firstItem="P6o-QU-PkF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="Z9Z-jL-nby"/>
+                            <constraint firstItem="TMS-Gv-4Ms" firstAttribute="top" secondItem="P6o-QU-PkF" secondAttribute="bottom" constant="8" symbolic="YES" id="ae6-Tf-ean"/>
+                            <constraint firstItem="fPN-Fo-HVk" firstAttribute="centerY" secondItem="TMS-Gv-4Ms" secondAttribute="centerY" id="eA2-BS-8km"/>
+                            <constraint firstItem="SqT-WZ-1a0" firstAttribute="top" secondItem="TMS-Gv-4Ms" secondAttribute="bottom" constant="8" symbolic="YES" id="ePE-3T-Frz"/>
+                            <constraint firstItem="fPN-Fo-HVk" firstAttribute="leading" secondItem="JQ9-Ba-S7z" secondAttribute="leading" id="o47-5t-BKk"/>
+                            <constraint firstItem="TMS-Gv-4Ms" firstAttribute="trailing" secondItem="SqT-WZ-1a0" secondAttribute="trailing" id="xC3-Ux-ziK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pheintz_logo" width="172" height="80"/>
+    </resources>
 </document>
