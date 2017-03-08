@@ -23,13 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pheintz_logo" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-QU-PkF">
-                                <rect key="frame" x="101" y="74" width="172" height="80"/>
+                                <rect key="frame" x="101.5" y="74" width="172" height="80"/>
                             </imageView>
-                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TMS-Gv-4Ms">
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="TMS-Gv-4Ms">
                                 <rect key="frame" x="91" y="162" width="268" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="8bf-Lh-LHy"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-Fo-HVk">
                                 <rect key="frame" x="16" y="167" width="67" height="21"/>
@@ -42,6 +45,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditingWithSender:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Tux-Ut-9rO"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ9-Ba-S7z">
                                 <rect key="frame" x="16" y="205" width="67" height="21"/>
@@ -51,6 +57,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TMS-Gv-4Ms" firstAttribute="leading" secondItem="SqT-WZ-1a0" secondAttribute="leading" id="14c-4T-jsL"/>
                             <constraint firstItem="JQ9-Ba-S7z" firstAttribute="width" secondItem="fPN-Fo-HVk" secondAttribute="width" id="BwZ-gH-xbF"/>
@@ -66,9 +73,21 @@
                             <constraint firstItem="fPN-Fo-HVk" firstAttribute="leading" secondItem="JQ9-Ba-S7z" secondAttribute="leading" id="o47-5t-BKk"/>
                             <constraint firstItem="TMS-Gv-4Ms" firstAttribute="trailing" secondItem="SqT-WZ-1a0" secondAttribute="trailing" id="xC3-Ux-ziK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lAA-qb-A0A" appends="YES" id="55w-hB-0Fj"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="TMS-Gv-4Ms" id="Vae-7W-Vop"/>
+                        <outlet property="numberField" destination="SqT-WZ-1a0" id="daY-ee-8VX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lAA-qb-A0A">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="BYZ-38-t0r" id="wLn-A2-Nz8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
